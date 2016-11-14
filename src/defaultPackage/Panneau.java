@@ -6,6 +6,15 @@ import javax.swing.JPanel;
 
 public class Panneau extends JPanel { 
 
+	
+	public Panneau(){
+		
+		this.setBackground(null);
+		this.setOpaque(false);
+		
+		
+	}
+	
 	public void paintComponent(Graphics g){
 		
 		super.paintComponent(g);

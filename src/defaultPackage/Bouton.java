@@ -40,7 +40,6 @@ public class Bouton extends JButton implements MouseListener {
      * Invoked when a mouse button has been pressed on a component.
      */
     public void mousePressed(MouseEvent e){
-   
     	
     };
 

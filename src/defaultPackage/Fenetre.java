@@ -2,11 +2,14 @@ package defaultPackage;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GridLayout;
+import java.awt.Dimension;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.plaf.ColorUIResource;
 
 public class Fenetre extends JFrame {
 
@@ -16,25 +19,16 @@ public class Fenetre extends JFrame {
 	private JPanel numbers;
 	private JPanel operators;
 	
+	private JPanel container;
+	
   public Fenetre(){
 
     this.setTitle("Calculatrice");
-    this.setSize(600, 400);
+    this.setSize(310, 400);
+    this.setResizable(false);
     this.setLocationRelativeTo(null);
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);             
-
-    //JPanel
-//    JPanel pan = new Panneau();
-//    CardLayout cl = new CardLayout();
-//    pan.setLayout(cl);
-//    JPanel card1 = new JPanel();
-//    card1.setBackground(Color.blue);        
-//    JPanel card2 = new JPanel();
-//    card2.setBackground(Color.red);     
-//    JPanel card3 = new JPanel();
-//    card3.setBackground(Color.green);
-    
-//    pa
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
+    this.setBackground(new ColorUIResource(238,238,238));
 
     this.result = new JPanelResult();
     
@@ -42,39 +36,46 @@ public class Fenetre extends JFrame {
     
     this.operators = new JPanelOperator();
     
-
+    this.container = new JPanelContainer();
     
-   //JButton Listener
-//    JButton bouton = new JButton("Contenu suivant");
-//    //Définition de l'action du bouton
-//    bouton.addActionListener(new ActionListener(){
-//      public void actionPerformed(ActionEvent event){
-//        //Via cette instruction, on passe au prochain conteneur de la pile
-//        cl.next(pan);
-//      }
-//    });
+    this.container.setBackground(Color.BLACK);
+    
+////  g.fillOval(20, 20, 75, 75);
+////  Graphics2D g2d = (Graphics2D)g;         
+//  GradientPaint gp = new GradientPaint(0, 0, Color.RED, 30, 30, Color.cyan, true);                
+//  g2d.setPaint(gp);
+//  g2d.fillRect(0, 0, this.getWidth(), this.getHeight()); 
+    
+    
+    
+    
+    this.container.setPreferredSize(new Dimension(310,400));
+    this.container.setMinimumSize(new Dimension(310, 400));
+    this.container.setMaximumSize(new Dimension(310,400));
+    container.add(result, BorderLayout.NORTH);
+    container.add(numbers, BorderLayout.WEST);
+    container.add(operators, BorderLayout.EAST);
     
     //Position on JFrame
-    this.getContentPane().add(result, BorderLayout.NORTH);
-    this.getContentPane().add(numbers, BorderLayout.CENTER);
-    this.getContentPane().add(operators, BorderLayout.EAST);
-    
-    //On ajoute le bouton au content pane de la JFrame
-//    for(int i=1;i<10;i++){
-//    	this.getContentPane().add(new JButton(String.valueOf(i)));
-//    }
-//    this.getContentPane().add(new JButton(""));
-//    this.getContentPane().add(new JButton("0"));
-//    this.getContentPane().add(new JButton(""));
-    
-    //On prévient notre JFrame que notre JPanel sera son content panel
-//    this.setContentPane(pan);               
+    this.getContentPane().add(container);
 
     this.setVisible(true);
     pack();
-    
 
   }
+  
+//	public void paintComponent(Graphics g){
+//		
+//		super.paintComponent(g);
+//		System.out.println("Je suis exécutée !"); 
+////    g.fillOval(20, 20, 75, 75);
+////    Graphics2D g2d = (Graphics2D)g;         
+////    GradientPaint gp = new GradientPaint(0, 0, Color.RED, 30, 30, Color.cyan, true);                
+////    g2d.setPaint(gp);
+////    g2d.fillRect(0, 0, this.getWidth(), this.getHeight()); 
+////    this.setBackground(Color.GRAY);
+//   
+//  }
 
 public JPanel getResult() {
 	return result;

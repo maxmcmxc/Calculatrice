@@ -13,14 +13,14 @@ public class JPanelNumber extends Panneau {
 		
 		super();
 	    this.setName("numbers");
-	    this.setBackground(Color.YELLOW);
+//	    this.setBackground(Color.YELLOW);
 	    this.setPreferredSize(new Dimension(200,300));
 	    this.setMinimumSize(new Dimension(200, 300));
 	    this.setMaximumSize(new Dimension(200,300));
 	    
-	    this.numberSub = new JPanel();
+	    this.numberSub = new Panneau();
 	    this.numberSub.setName("numbers");
-	    this.numberSub.setBackground(Color.BLACK);
+//	    this.numberSub.setBackground(Color.BLACK);
 	    this.numberSub.setPreferredSize(new Dimension(180,260));
 	    this.numberSub.setMinimumSize(new Dimension(180, 260));
 	    this.numberSub.setMaximumSize(new Dimension(180,260));

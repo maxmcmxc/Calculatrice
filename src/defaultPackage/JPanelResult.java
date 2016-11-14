@@ -6,6 +6,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 
 public class JPanelResult extends Panneau {
 
@@ -16,30 +17,32 @@ public class JPanelResult extends Panneau {
 		
 		super();
 	    this.setName("result");
-	    this.setBackground(Color.blue);
+//	    this.setBackground(Color.blue);
 	    
 	    this.setPreferredSize(new Dimension(300,100));
 	    this.setMinimumSize(new Dimension(300, 100));
 	    this.setMaximumSize(new Dimension(300,100));
 	    
-	    this.labelResult = new JLabel("blabla");
-	    this.labelResult.setForeground(Color.RED);
-	    Border border = BorderFactory.createLineBorder(Color.BLACK);
-	    this.labelResult.setBorder(border);
-	    this.labelResult.setPreferredSize(new Dimension(250,50));
-	    this.labelResult.setMinimumSize(new Dimension(250, 50));
-	    this.labelResult.setMaximumSize(new Dimension(250,50));
+	    this.labelResult = new JLabel("");
 	    this.labelResult.setOpaque(true);
-	    this.labelResult.setBackground(Color.darkGray);
+	    this.labelResult.setForeground(Color.BLACK);
+	    Border border = BorderFactory.createLineBorder(Color.GRAY);
+	    this.labelResult.setBorder(border);
+	    this.labelResult.setBorder(new EmptyBorder(10, 10, 10, 10));
+	    this.labelResult.setPreferredSize(new Dimension(280,50));
+	    this.labelResult.setMinimumSize(new Dimension(280, 50));
+	    this.labelResult.setMaximumSize(new Dimension(280,50));
+//	    this.labelResult.setOpaque(true);
+//	    this.labelResult.setBackground(Color.darkGray);
 	    this.labelResult.setHorizontalAlignment(SwingConstants.RIGHT);
-	    
-	    this.operation = new JLabel("aaaa");
-	    this.operation.setForeground(Color.CYAN);
-	    this.operation.setPreferredSize(new Dimension(250,30));
-	    this.operation.setMinimumSize(new Dimension(250, 30));
-	    this.operation.setMaximumSize(new Dimension(250,30));
-	    this.operation.setOpaque(true);
-	    this.operation.setBackground(Color.darkGray);
+//	    this.labelResult.setBounds(x, y, 280, 50);
+	    this.operation = new JLabel("");
+	    this.operation.setForeground(Color.WHITE);
+	    this.operation.setPreferredSize(new Dimension(280,30));
+	    this.operation.setMinimumSize(new Dimension(280, 30));
+	    this.operation.setMaximumSize(new Dimension(280,30));
+//	    this.operation.setOpaque(true);
+//	    this.operation.setBackground(Color.darkGray);
 	    this.operation.setHorizontalAlignment(SwingConstants.CENTER);
 	    
 //	    this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
